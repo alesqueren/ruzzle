@@ -70,17 +70,17 @@ def removeDuplicates(seq):
 
 def main():
 
-   print "Build the game's grid ..."
-   line = sys.argv[1]
-   grid = [['' for x in range(4)] for y in range(4)]
-   for i in range(len(line)):
-      grid[i/4][i%4] = line[i]
-
    print "Load dictionary ..."
    dico = node("")
    with open(dicoPath, 'r+') as f:
       for line in f:
          dico.insert(line[0:len(line)-2])
+
+   print "Build the game's grid ..."
+   line = sys.argv[1]
+   grid = [['' for x in range(4)] for y in range(4)]
+   for i in range(len(line)):
+      grid[i/4][i%4] = line[i]
 
    print "Initialise open solutions ..."
    openSols = []
